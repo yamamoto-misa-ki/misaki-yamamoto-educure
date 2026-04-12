@@ -1,15 +1,23 @@
+import java.util.Scanner;
+
 public class Main6 {
     public static void main(String[] args) {
-        // 1. 変数priceを宣言し、1000で初期化する
-        int price = 1000;
+        // キーボード入力を受け取る準備
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. 経験値を入力
+        System.out.print("現在の経験値を入力してください：");
+        String input = scanner.next();
+
+        // 文字列を数字(int)に変換
+        int exp = Integer.parseInt(input);
+
+        // 2. ボーナス経験値25%増加（切り捨て）
+        int bonusExp = (int)(exp * 1.25);
+
+        // 3. 表示
+        System.out.println("ボーナス後の経験値： " + bonusExp);
         
-        // 2. 更新前の価格を表示する
-        System.out.println("更新前の価格： " + price + "円");
-        
-        // 3. 変数priceに1200を再代入する（型名は書かないのがポイント）
-        price = 1200; 
-        
-        // 4. 更新後の価格を表示する
-        System.out.println("更新後の価格： " + price + "円");
+        scanner.close();
     }
 }

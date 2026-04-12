@@ -1,21 +1,26 @@
-p/**
- * 自己紹介を表示するプログラムです
- * これまでに学んだ変数とコメントを組み合わせています
- * @author yamamoto misaki
- */
+import java.util.Scanner;
+
 public class Main8 {
     public static void main(String[] args) {
-        // 変数の宣言と初期化
-        String name = "山田太郎";
-        String birthPlace = "東京都";
-        String favoriteFood = "ラーメン";
+        Scanner scanner = new Scanner(System.in);
 
-        // 自己紹介の出力
-        System.out.println("===== 自己紹介 =====");
-        
-        // 単一行コメント：各情報を出力
-        System.out.println("名前： " + name);
-        System.out.println("出身地： " + birthPlace);
-        System.out.println("好きな食べ物： " + favoriteFood);
+        // 1. 攻撃力と防御力を入力
+        System.out.print("攻撃力を入力してください：");
+        int attack = Integer.parseInt(scanner.next());
+
+        System.out.print("防御力を入力してください：");
+        int defense = Integer.parseInt(scanner.next());
+
+        // 2. 通常ダメージを計算
+        int normalDamage = attack - defense;
+
+        // 3. クリティカルダメージを計算 (1.5倍してキャスト)
+        int criticalDamage = (int)(normalDamage * 1.5);
+
+        // 4. 両方のダメージを表示
+        System.out.println("通常ダメージ：" + normalDamage);
+        System.out.println("クリティカルダメージ：" + criticalDamage);
+
+        scanner.close();
     }
 }
